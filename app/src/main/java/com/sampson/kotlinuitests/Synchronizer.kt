@@ -19,7 +19,7 @@ class Synchronizer(
         private val time: Int
     ) : TimerTask() {
         override fun run() {
-            callback(time)
+            callback.invoke(time)
             countingIdlingResource.decrement()
         }
     }
